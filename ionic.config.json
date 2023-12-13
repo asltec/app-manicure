@@ -1,0 +1,7 @@
+{
+  "name": "app-manicure",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

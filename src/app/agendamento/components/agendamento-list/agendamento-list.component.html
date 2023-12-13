@@ -1,0 +1,19 @@
+<ion-list *ngFor="let agendamento of arrayAgendamento">
+
+  <ion-item>
+    <ion-card class="ion-card-list">
+      <ion-card-header>
+        <ion-card-title>Cliente: {{agendamento.nome}}</ion-card-title>
+        <ion-card-subtitle>Data: 30/11/2023</ion-card-subtitle>
+        <ion-card-subtitle>Hora: 16:50</ion-card-subtitle>
+        <ion-card-subtitle>Procedimento: {{agendamento.procedimento}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content *ngIf="agendamento.observacao">
+       Observação: {{agendamento.observacao}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+
+</ion-list>

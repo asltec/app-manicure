@@ -1,0 +1,91 @@
+
+<app-menu (home)="rotaHome()" (lista_agendamento)="rotaListagemAgendamento()"></app-menu>
+
+<ion-header>
+  <ion-toolbar class="toolbar-agendamento">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-toolbar-ticket-type">AGENDAMENTO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll-y="false">
+
+  <form [formGroup]="formAgendamento" (ngSubmit)="submit()">
+
+    <ion-list lines="none">
+
+      <ion-item>
+        <ion-input formControlName="nome" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Nome" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="endereco" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Endereço" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="numero" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Número" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="complemento" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Complemento" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="bairro" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Bairro" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input formControlName="telefone" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true"
+          inputmode="text" placeholder="Telefone" required="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Selecione um procedimento" formControlName="procedimento">
+          <ion-select-option value="Pé e Mão">Pé e Mão - R$60,00</ion-select-option>
+          <ion-select-option value="Mão">Mão - R$40,00</ion-select-option>
+          <ion-select-option value="Pé">Pé - R$40,00</ion-select-option>
+          <ion-select-option value="francesinha">Francesinha - R$15,00</ion-select-option>
+          <ion-select-option value="Esmaltação Adulto">Esmaltação Adulto - R$20,00</ion-select-option>
+          <ion-select-option value="Esmaltação Kids">Esmaltação Kids - R$15,00</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea formControlName="observacao" labelPlacement="floating" fill="outline"
+          placeholder="Observação"></ion-textarea>
+      </ion-item>
+
+      <!-- <ion-item>
+
+        <ion-input placeholder="Data" formControlName="data" [(ngModel)]="date_event" labelPlacement="stacked"
+          type="date_event" id="open_cal">
+        </ion-input>
+        <ion-modal trigger="open_cal" [keepContentsMounted]="true" [initialBreakpoint]="0.65">
+          <ng-template>
+            <ion-datetime presentation="date" [(ngModel)]="date_event" doneText="Ok" cancelText="Cancelar"
+              [ngModelOptions]="{standalone: true}" (ionChange)="datePick()" [showDefaultButtons]="true" locale="pt-BR"
+              displayFormat="DD/MM/YYYY">
+            </ion-datetime>
+          </ng-template>
+        </ion-modal> 
+      </ion-item> -->
+    </ion-list>
+
+
+    <!-- <div class="div-button">
+      <ion-button type="submit" expand="full">Agendar</ion-button>
+    </div> -->
+
+  </form>
+</ion-content>
+<footer>
+  <ion-button type="submit" expand="full">Agendar</ion-button>
+</footer>
